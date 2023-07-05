@@ -1,0 +1,5 @@
+1. Discover
+2. Design
+3. Develop
+4. UAT
+5. Go-Live
