@@ -39,7 +39,7 @@ def isWinner(board,letter):
 def playerMove():
     runCode = True
     while runCode:
-        move = input("Please select a position to enter the X between 1 - 9: ")
+        move = int(input("Please select a position to enter the X between 1 - 9: "))
         try:
 
             if 0 < move < 10:
