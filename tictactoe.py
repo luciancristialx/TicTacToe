@@ -102,7 +102,7 @@ def main():
             playerMove()
             printBoard(boardList)
         else:
-            print("Sorry you lost the game!")
+            print("Sorry.. You lost the game!")
             break
 
         if not(isWinner(boardList,'X')):
@@ -111,7 +111,7 @@ def main():
                 print('')
             else:
                 insertLetter('O',move)
-                print("Computer place an O on position ", move, ':')
+                print("Computer place an O on position: ", move, '!')
                 printBoard(boardList)
         else:
             print("You win!")
