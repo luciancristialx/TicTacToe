@@ -3,22 +3,22 @@ def insertLetter(letter,position):
     boardList[position] = letter
 
 def spaceIsFree(position):
-    return boardList[position] == ''
+    return boardList[position] == ' '
 
 def printBoard(board):
-    print('----------------')
-    print('|    |    |    |')
-    print('| ' + board[1] + '  | ' + board[2] + '  | ' + board[3] + '  |')
-    print('|    |    |    |')
-    print('----------------')
-    print('|    |    |    |')
-    print('| ' + board[4] + '  | ' + board[5] + '  | ' + board[6] + '  |')
-    print('|    |    |    |')
-    print('----------------')
-    print('|    |    |    |')
-    print('| ' + board[7] + '  | ' + board[8] + '  | ' + board[9] + '  |')
-    print('|    |    |    |')
-    print('----------------')
+    print('-------------')
+    print('|   |   |   |')
+    print('| ' + board[1] + ' | ' + board[2] + ' | ' + board[3] + ' |')
+    print('|   |   |   |')
+    print('-------------')
+    print('|   |   |   |')
+    print('| ' + board[4] + ' | ' + board[5] + ' | ' + board[6] + ' |')
+    print('|   |   |   |')
+    print('-------------')
+    print('|   |   |   |')
+    print('| ' + board[7] + ' | ' + board[8] + ' | ' + board[9] + ' |')
+    print('|   |   |   |')
+    print('-------------')
 
 def isBoardFull(board):
     if board.count(' ') > 1:
@@ -39,9 +39,9 @@ def isWinner(board,letter):
 def playerMove():
     runCode = True
     while runCode:
-        move = int(input("Please select a position to enter the X between 1 - 9: "))
+        move = input("Please select a position to enter the X between 1 - 9: ")
         try:
-
+            move = int(move)
             if 0 < move < 10:
                 if spaceIsFree(move):
                     runCode = False
@@ -107,11 +107,11 @@ def main():
 
         if not(isWinner(boardList,'X')):
             move = computerMove()
-            if move == 0:
-                print("Tie game!")
+            if move is None:
+                print('')
             else:
                 insertLetter('O',move)
-                print("Computer place an O on position: ", move)
+                print("Computer place an O on position ", move, ':')
                 printBoard(boardList)
         else:
             print("You win!")
